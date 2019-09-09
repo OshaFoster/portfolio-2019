@@ -1,7 +1,7 @@
-export const colors = {
+export const color = {
   text: '#8598A7',
   darkText: '#2D526E',
-  bacground: '#EDF4F8',
+  background: '#EDF4F8',
   highlights: '#6BC9FE',
   white: '#FBFBFB'
 }
