@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { color } from './theme';
 
+import LinkedIn from './components/svg/LinkedIn'
+
 // header, footer, section, nav, article
 // h1 - 5, p, a
 // div, span
@@ -12,7 +14,8 @@ const Wrapper = styled.div`
 `
 
 const Nav = styled.nav`
-
+  height: 100px;
+  position: relative;
 `
 
 const Header = styled.header`
@@ -44,10 +47,21 @@ const Title = styled.h3`
   line-height: 55px;
   color: ${color.darkText};
 `
+const IconWrapper = styled.div`
+position: absolute;
+right: 83px;
+top: 50%;
+transform: translateY(-50%);
+`
 
 function MainPage() {
   return (
     <Wrapper>
+      <Nav>
+        <IconWrapper>
+      <LinkedIn />
+      </IconWrapper>
+      </Nav>
       <Header>
         <Name>Osha Foster</Name>
         <Title>Software Developer</Title>
