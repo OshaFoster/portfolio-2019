@@ -28,9 +28,22 @@ const Header = styled.div`
   margin: 0 auto;
   padding: 20px 0 144px 140px;
   ${media.small`
-    padding: 0;
+    padding: 20px 0 40px 0;
     text-align: center;
   `}
+`
+const CenterLine = styled.div`
+position: absolute;
+height: 100px;
+width: 4px;
+border-radius: 50px;
+background-color: ${color.darkText};
+left: 50%;
+bottom: 240px;
+${media.small`
+bottom: 345px;
+height: 95px;
+`}
 `
 
 const ContentWrapper = styled.div`
@@ -48,6 +61,7 @@ const Name = styled.h2`
   line-height: 45px;
   color: ${color.text};
   margin-bottom: 35px;
+  font-weight: 400;
   ${media.small`
   font-size: 25px;
   line-height: 30px;
@@ -57,6 +71,7 @@ const Title = styled.h3`
  font-family: 'Manjari', sans-serif;
   font-size: 55px;
   line-height: 55px;
+  font-weight: 400;
   color: ${color.darkText};
   ${media.small`
   font-size: 40px;
@@ -76,10 +91,12 @@ text-decoration: none;
 `
 
 const ContentBottom = styled(ContentTop)`
+  padding-top: 60px;
   position: relative;
   padding-bottom: ${PHONE_TOP + 256}px;
   ${media.small`
   padding-bottom: 0;
+  padding-top: 0;
 `}
 `
 
@@ -113,7 +130,7 @@ right: 50%;
 transform: translateX(50%);
 ${media.small`
 top: 280px;
-left: 50%
+left: 50%;
  display: block;
  transform: none;
  margin-left: -140px;
@@ -136,7 +153,7 @@ ${media.small`
 const TextWrap = styled.div`
 margin: 59px 0 0 82px;
 ${media.small`
-  padding: 90px 100px 0 50px;
+  padding: 120px 100px 0 50px;
 `}
  `
 const TextWrapRight = styled.div`
@@ -197,7 +214,7 @@ display: none;
 ${media.small`
   display: block;
   background-color: ${color.background};
-  padding: 80px 0;
+  padding: 90px 0;
 `}
 `
 
@@ -215,10 +232,7 @@ const contributions = () => {
   })
 }
 
-const TitleWrap = styled.div`
-
-`
-
+const TitleWrap = styled.div``
 
 function MainPage() {
   return (
@@ -233,6 +247,7 @@ function MainPage() {
         <Header>
           <Name>Osha Foster</Name>
           <Title>App Developer</Title>
+          <CenterLine />
         </Header>
       </ContentTop>
       <ContentWrapper>
@@ -240,8 +255,8 @@ function MainPage() {
           <ContentLeft>
             <TextWrap>
               <TitleWrap>
-              <ProjectTitle>DigNDirt </ProjectTitle>
-              <RightArrow />
+                <ProjectTitle>DigNDirt </ProjectTitle>
+                <RightArrow />
               </TitleWrap>
               <ATag href="http://www.verisage.us/en/" > <BuiltAt>built @ </BuiltAt> <Verisage> Verisage</Verisage> </ATag>
             </TextWrap>
@@ -250,16 +265,16 @@ function MainPage() {
               {contributions()}
             </ContLeft>
           </ContentLeft>
-            <PhoneImage />
+          <PhoneImage />
           <ContentRight>
             <TextWrapRight>
               <DirectionArrow />
               <MedText>React-Native</MedText>
               <MedText>Expo</MedText>
               <ContBottom>
-              <ContHeader>contributor: </ContHeader>
-              {contributions()}
-            </ContBottom>
+                <ContHeader>contributor: </ContHeader>
+                {contributions()}
+              </ContBottom>
             </TextWrapRight>
           </ContentRight>
         </ContentBottom>
