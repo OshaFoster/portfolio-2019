@@ -12,7 +12,7 @@ import DirectionArrow from './components/svg/DirectionArrow'
 // div, span
 // input, form, button
 
-const PHONE_TOP = 231;
+const PHONE_TOP = 261;
 
 const Wrapper = styled.div`
   background-color: ${color.white};
@@ -95,7 +95,7 @@ const ContentBottom = styled(ContentTop)`
   position: relative;
   padding-bottom: ${PHONE_TOP + 256}px;
   ${media.small`
-  padding-bottom: 0;
+  padding-bottom: 60px;
   padding-top: 0;
 `}
 `
@@ -110,10 +110,10 @@ ${media.small`
   &:after{
     content: '';
     background-color:  ${color.white};
-    height: 220px;
+    height: 250px;
     width: 100%;
     position: absolute;
-    bottom: 400px;
+    bottom: 420px;
     z-index: 3;
   }
 `}
@@ -159,7 +159,7 @@ ${media.small`
 const TextWrapRight = styled.div`
 margin: 59px 0 0 350px;
 ${media.small`
-    margin: 65px auto 0;
+    margin: 45px auto 0;
     text-align: center;
     background-color: ${color.white};
   `}
@@ -191,7 +191,6 @@ display: inline-block;
 const Verisage = styled(SmallText)`
 color: ${color.highlight};
 text-decoration: underline;
-font-weight: 700;
 display: inline-block;
 `
 
@@ -214,13 +213,20 @@ display: none;
 ${media.small`
   display: block;
   background-color: ${color.background};
-  padding: 90px 0;
+  padding: 80px 0;
 `}
 `
 
 const ContHeader = styled(MedText)`
 color: ${color.highlight};
+font-size: 38px;
 `
+
+
+const TitleWrap = styled.div``
+
+const TextBottomWrap = styled.div`
+margin-bottom: 80px;`
 
 const contArray = ['development', 'depolyment', 'maintenance', 'design', 'wire frames', 'user stories']
 
@@ -231,8 +237,6 @@ const contributions = () => {
     )
   })
 }
-
-const TitleWrap = styled.div``
 
 function MainPage() {
   return (
@@ -269,8 +273,10 @@ function MainPage() {
           <ContentRight>
             <TextWrapRight>
               <DirectionArrow />
+              <TextBottomWrap>
               <MedText>React-Native</MedText>
               <MedText>Expo</MedText>
+              </TextBottomWrap>
               <ContBottom>
                 <ContHeader>contributor: </ContHeader>
                 {contributions()}
