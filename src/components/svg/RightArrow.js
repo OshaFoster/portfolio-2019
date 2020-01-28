@@ -8,9 +8,7 @@ const Svg = styled.svg`
   stroke-width: 1px;
   stroke: ${color.highlight};
   fill: ${color.highlight};
-  display: inline-block;
   padding-bottom: 10px;
-  margin-left: 25px;
 `
 
 export default function RightArrow() {
